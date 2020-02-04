@@ -1,0 +1,71 @@
+body{
+    background-color: rgb(43, 43, 43);
+}
+
+#gameboard-container {
+    width: 500px;
+    height: 600px;
+    border: 1px solid #FFF;
+    margin-left: calc(50% - 380px / 2);
+    margin-top: calc(10vh - 100px / 2);
+}
+
+#game-options{
+    margin-left: 150px;
+    margin-top: 20px;
+}
+
+#game-options button{
+    cursor: pointer;
+}
+
+#btnStartGame{
+    width: 100px;
+    height: 30px;
+    background-color: green;
+    color: blue;
+    border: 0px;
+    font-weight: bold;
+}
+
+#btnResetGame{
+    width: 100px;
+    height: 30px;
+    background-color: red;
+    color: rgb(252, 252, 252);
+    border: 0px;
+    font-weight: bold;
+}
+
+#gameboard{
+    margin-top: 20px;
+}
+
+#gameboard button{
+    width: 150px;
+    height: 160px;
+    border: 1px solid white;
+    margin-left: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+    color: black;
+}
+
+#player-container{
+    border: 1px solid #FFF;
+    margin-left: calc(50% - 380px / 2);
+    margin-top: 20px;
+    border: 0px;
+}
+
+#player-container input{
+    width: 500px;
+    height: 50px;
+    font-size: large;
+    font-weight: 200px;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
