@@ -65,7 +65,7 @@ function resetGame() {
     }
     btnStartGame.disabled = false;
     playerContainer.hidden = true;
-    player.classList.remove("player1", "player2");
+    player.classList.remove("player1", "player2", "noWinner");
     player.value = "";
     winner.classList.remove("player1", "player2");
     winnerContainer.hidden = true;
@@ -78,7 +78,7 @@ function putAnswer(e) {
         e.target.classList.add("player1");
         isPlayerOne = false;
         isPlayerTwo = true;
-        player.classList.remove("player1");
+        player.classList.remove("player1", "noWinner");
         player.classList.add("player2");
         player.value = "Turn of: Player 2";
     }
@@ -88,7 +88,7 @@ function putAnswer(e) {
         e.target.classList.add("player2");
         isPlayerOne = true;
         isPlayerTwo = false;
-        player.classList.remove("player2");
+        player.classList.remove("player2", "noWinner");
         player.classList.add("player1");
         player.value = "Turn of: Player 1";
     }
