@@ -2,6 +2,7 @@ var boardSlots;
 var boardSlotsChecker;
 var isPlayerOne = false;
 var isPlayerTwo = false;
+var isThereAWinner = false;
 var player;
 var playerContainer;
 var winner;
@@ -28,7 +29,7 @@ function initializeGame() {
     playerContainer = document.querySelector("#player-container");
     player = document.querySelector("#player-container input");
     winnerContainer = document.querySelector("#game-winner");
-    winner = document.querySelector("#game-winner label");
+    winner = document.querySelector("#game-winner input");
     player.value = "";
     playerContainer.hidden = true;
     winnerContainer.hidden = true;
@@ -67,8 +68,10 @@ function resetGame() {
     playerContainer.hidden = true;
     player.classList.remove("player1", "player2", "noWinner");
     player.value = "";
-    winner.classList.remove("player1", "player2");
+    winner.classList.remove("player1", "player2", "noWinner");
     winnerContainer.hidden = true;
+    winner.value = "";
+    isThereAWinner = false;
 }
 
 function putAnswer(e) {
@@ -102,10 +105,8 @@ function checkBoardSlots() {
             disabledSlotCounter++;
             conditionsToWin();
         }
-        if (disabledSlotCounter == 9) {
-            player.classList.remove("player1", "player2");
-            player.classList.add("noWinner");
-            player.value = "No Winner.";
+        if (disabledSlotCounter == 9 && isThereAWinner == false) {
+            declareWinner(0);
         }
     }
 }
@@ -116,16 +117,26 @@ function declareWinner(winningPlayer) {
         playerContainer.hidden = true;
         winnerContainer.hidden = false;
         winner.classList.add("player1");
-        winner.innerText = "The Winner is: Player 1!";
+        winner.value = "The Winner is: Player 1!";
         player.value = "";
+        isThereAWinner = true;
     }
-    else {
+    else if (winningPlayer == 2){
         // alert("Player 2 WINS!");
         playerContainer.hidden = true;
         winnerContainer.hidden = false;
         winner.classList.add("player2");
-        winner.innerText = "The Winner is: Player 2!";
+        winner.value = "The Winner is: Player 2!";
         player.value = "";
+        isThereAWinner = true;
+    }
+    else {
+        playerContainer.hidden = true;
+        winnerContainer.hidden = false;
+        winner.classList.add("noWinner");
+        winner.value = "No Winner.";
+        player.value = "";
+        isThereAWinner = false;
     }
     for (var i = 0; i < boardSlots.length; i++) {
         boardSlots[i].disabled = true;
