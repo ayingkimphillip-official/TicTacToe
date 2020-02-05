@@ -3,8 +3,12 @@
     <head>
         <script type="text/javascript" src="TicTacToe.js"></script>
         <link rel="stylesheet" href="index.css"/>
+        <title>TIC TAC TOE</title>
     </head>
     <body>
+        <div id="game-label">
+            <label>TIC TAC TOE</label>
+        </div>
         <div id="player-container">
             <input type="text" readonly/>
         </div>
@@ -12,6 +16,9 @@
             <div id="game-options">
                 <button id="btnStartGame">START GAME</button>
                 <button id="btnResetGame">RESET</button>
+            </div>
+            <div id="game-winner">
+                <label></label>
             </div>
             <div id="gameboard">
                 <button disabled></button>
