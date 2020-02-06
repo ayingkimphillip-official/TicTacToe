@@ -2,9 +2,22 @@ body{
     background-color: rgb(43, 43, 43);
 }
 
+#game-legend{
+    width: 150px;
+    text-align: left;
+    margin-left: calc(35% - 380px / 2);
+}
+#game-legend h5{
+    margin: 0px;
+    color: white;
+}
+#game-legend p{
+    margin: 0px;
+}
+
 #game-label{
     width: 496px;
-    height: 100px;
+    height: 80px;
     text-align: center;
     margin-left: calc(50% - 380px / 2);
     margin-top: calc(10vh - 100px / 2);
@@ -93,7 +106,6 @@ body{
 #player-container{
     border: 1px solid #FFF;
     margin-left: calc(50% - 380px / 2);
-    margin-top: 20px;
     border: 0px;
 }
 
